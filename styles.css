@@ -1,0 +1,21 @@
+html, body {
+	height: 100%;
+	min-height: 100%;
+	margin: 0;
+}
+.slide {
+	min-height:100%; 
+	position:relative;
+}
+#slide1 {
+	background: peachpuff; 
+}
+#slide2 {
+	background: lightcoral;
+}
+#slide3 {
+	background: lightgray;
+}
+#slide4 {
+	background: lightgreen;
+}
