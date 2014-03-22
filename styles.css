@@ -9,7 +9,7 @@ html, body {
 	min-height: 100%; 
 	position: relative;
 }
-.slide a, .slide p {
+.slide a {
 	position: absolute;
 	top: 50%;
 	height: 10em;
@@ -27,5 +27,7 @@ html, body {
 }
 #slideEnd {
 	background: black;
+}
+#slideEnd a {
 	color: white;
 }
