@@ -1,34 +1,40 @@
 html, body {
-	height: 100%;
-	min-height: 100%;
-	margin: 0;
-	text-align: center;
-	position: relative;
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    text-align: center;
+    position: relative;
 }
 .slide {
-	min-height: 100%; 
-	position: relative;
+    min-height: 100%; 
+    position: relative;
 }
 .slide a {
-	position: absolute;
-	top: 50%;
-	height: 10em;
-	margin-top: -5em;
-	margin-left: -3em;
+    position: absolute;
+    top: 50%;
+    height: 10em;
+    margin-top: -5em;
+    margin-left: -3em;
 }
 #slide1 {
-	background: peachpuff; 
+    background: LightSalmon; 
 }
 #slide2 {
-	background: lightcoral;
+    background: LightCoral;
 }
 #slide3 {
-	background: lightgray;
+    background: DeepSkyBlue;
 }
 #slideEnd {
-	background: black;
+    background: black;
 }
-#slideEnd a {
-	color: white;
-	text-decoration: none;
+#slideEnd span {
+    color: white;
+    text-decoration: none;
+
+    position: absolute;
+    top: 50%;
+    height: 10em;
+    margin-top: -5em;
+    margin-left: -3em;
 }
