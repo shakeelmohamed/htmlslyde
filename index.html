@@ -17,19 +17,5 @@
     <div id="slideEnd" class="slide">
         <span>End of slideshow.</span>
     </div>
-    <script type="text/javascript" src="classhelper.js"></script>
-    <script type="text/javascript">
-        document.querySelectorAll("a[href*='#']").forEach(function(elem, index){
-          elem.addEventListener('click', function() { 
-            document.querySelectorAll(".slide").forEach(function(el, index){
-                classHelper.removeClass("#"+el.id, 'slideFrom slideTo');
-            });
-
-            classHelper.addClass("#"+this.parentElement.id, 'slideFrom');
-            classHelper.addClass(this.hash, 'slideTo');
-          }, false);
-          
-        });
-    </script>
 </body>
 </html>
