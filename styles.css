@@ -38,3 +38,28 @@ html, body {
     margin-top: -5em;
     margin-left: -3em;
 }
+
+:target{
+    -webkit-animation: slideTo 2s; /* Safari 4+ */
+    -moz-animation:    slideTo 2s; /* Fx 5+ */
+    -o-animation:      slideTo 2s; /* Opera 12+ */
+    animation:         slideTo 2s; /* IE 10+, Fx 29+ */
+}
+
+
+@-webkit-keyframes slideTo {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes slideTo {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes slideTo {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes slideTo {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
