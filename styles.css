@@ -38,3 +38,51 @@ html, body {
     margin-top: -5em;
     margin-left: -3em;
 }
+
+.slideFrom{
+    -webkit-animation: slideFrom 2s; /* Safari 4+ */
+    -moz-animation:    slideFrom 2s; /* Fx 5+ */
+    -o-animation:      slideFrom 2s; /* Opera 12+ */
+    animation:         slideFrom 2s; /* IE 10+, Fx 29+ */
+}
+
+.slideTo{
+    -webkit-animation: slideTo 2s; /* Safari 4+ */
+    -moz-animation:    slideTo 2s; /* Fx 5+ */
+    -o-animation:      slideTo 2s; /* Opera 12+ */
+    animation:         slideTo 2s; /* IE 10+, Fx 29+ */
+}
+
+@-webkit-keyframes slideFrom {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-moz-keyframes slideFrom {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+@-o-keyframes slideFrom {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes slideFrom {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-webkit-keyframes slideTo {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes slideTo {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes slideTo {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes slideTo {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
