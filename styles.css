@@ -1,18 +1,20 @@
 html, body {
     height: 100%;
     margin: 0;
+    overflow: hidden;
 }
 
 .slide {
     text-align: center;
     height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
 }
 
-/**
-    The idea behind this is to use the pseudo class :before with height same as parent.
-    Set it as inline-block to make it possible to use of vertical align. Next the font-size
-    is set to '0' to make sure if the pseudo content don't take up any space itself.
-*/
 .slide:before{
     content: '';
     height: 100%;
@@ -21,15 +23,75 @@ html, body {
     vertical-align: middle;
 }
 
-/**
-    Assume the :before as an element just before the slide's inner content. Now make
-    vertical align to middle. This will keep the content in absolute vertical central
-*/
-
 .slide > *{
     display: inline-block;
     vertical-align: middle;
 }
+
+.slide:first-child{
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 1;
+}
+
+.slide:target{
+    z-index: 2;
+}
+
+
+/** ==== SLIDE BOTTOM ==== */
+
+.slide.slideBottom {
+    -webkit-transition: top 2s, bottom 2s;
+    -o-transition: top 2s, bottom 2s;
+    -moz-transition: top 2s, bottom 2s;
+    transition: top 2s, bottom 2s;
+    top: -100%;
+    bottom: 100%;
+}
+
+.slide.slideBottom:target{
+    top: 0;
+    bottom: 0;
+}
+
+
+/** ==== SLIDE RIGHT ==== */
+
+.slide.slideRight{
+    -webkit-transition: left 2s, right 2s;
+    -o-transition: left 2s, right 2s;
+    -moz-transition: left 2s, right 2s;
+    transition: left 2s, right 2s;
+    left: -100%;
+    right: 100%;
+}
+
+.slide.slideRight:target{
+    left: 0;
+    right: 0;
+}
+
+
+/** ==== SLIDE SQUASH ==== */
+
+.slide.slideSquash {
+    -webkit-transition: left 2s, right 2s;
+    -o-transition: left 2s, right 2s;
+    -moz-transition: left 2s, right 2s;
+    transition: left 2s, right 2s;
+    left: 100%;
+    right: 100%;
+    z-index: 1;
+}
+
+.slide.slideSquash:target{
+    left: 0;
+    right: 0;
+}
+
 
 #slide1 {
     background: LightSalmon;
@@ -39,6 +101,9 @@ html, body {
 }
 #slide3 {
     background: DeepSkyBlue;
+}
+#slide4 {
+    background: limegreen;
 }
 #slideEnd {
     background: black;
