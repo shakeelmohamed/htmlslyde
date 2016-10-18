@@ -1,23 +1,38 @@
 html, body {
     height: 100%;
-    min-height: 100%;
     margin: 0;
-    text-align: center;
-    position: relative;
 }
+
 .slide {
-    min-height: 100%; 
-    position: relative;
+    text-align: center;
+    height: 100%;
 }
-.slide a {
-    position: absolute;
-    top: 50%;
-    height: 10em;
-    margin-top: -5em;
-    margin-left: -3em;
+
+/**
+    The idea behind this is to use the pseudo class :before with height same as parent.
+    Set it as inline-block to make it possible to use of vertical align. Next the font-size
+    is set to '0' to make sure if the pseudo content don't take up any space itself.
+*/
+.slide:before{
+    content: '';
+    height: 100%;
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
 }
+
+/**
+    Assume the :before as an element just before the slide's inner content. Now make
+    vertical align to middle. This will keep the content in absolute vertical central
+*/
+
+.slide > *{
+    display: inline-block;
+    vertical-align: middle;
+}
+
 #slide1 {
-    background: LightSalmon; 
+    background: LightSalmon;
 }
 #slide2 {
     background: LightCoral;
@@ -28,13 +43,8 @@ html, body {
 #slideEnd {
     background: black;
 }
+
 #slideEnd span {
     color: white;
     text-decoration: none;
-
-    position: absolute;
-    top: 50%;
-    height: 10em;
-    margin-top: -5em;
-    margin-left: -3em;
 }
