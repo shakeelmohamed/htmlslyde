@@ -1,23 +1,100 @@
 html, body {
     height: 100%;
-    min-height: 100%;
     margin: 0;
-    text-align: center;
-    position: relative;
+    overflow: hidden;
 }
+
 .slide {
-    min-height: 100%; 
-    position: relative;
-}
-.slide a {
+    text-align: center;
+    height: 100%;
     position: absolute;
-    top: 50%;
-    height: 10em;
-    margin-top: -5em;
-    margin-left: -3em;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
 }
+
+.slide:before{
+    content: '';
+    height: 100%;
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
+}
+
+.slide > *{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.slide:first-child{
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 1;
+}
+
+.slide:target{
+    z-index: 2;
+}
+
+
+/** ==== SLIDE BOTTOM ==== */
+
+.slide.slideBottom {
+    -webkit-transition: top 2s, bottom 2s;
+    -o-transition: top 2s, bottom 2s;
+    -moz-transition: top 2s, bottom 2s;
+    transition: top 2s, bottom 2s;
+    top: -100%;
+    bottom: 100%;
+}
+
+.slide.slideBottom:target{
+    top: 0;
+    bottom: 0;
+}
+
+
+/** ==== SLIDE RIGHT ==== */
+
+.slide.slideRight{
+    -webkit-transition: left 2s, right 2s;
+    -o-transition: left 2s, right 2s;
+    -moz-transition: left 2s, right 2s;
+    transition: left 2s, right 2s;
+    left: -100%;
+    right: 100%;
+}
+
+.slide.slideRight:target{
+    left: 0;
+    right: 0;
+}
+
+
+/** ==== SLIDE SQUASH ==== */
+
+.slide.slideSquash {
+    -webkit-transition: left 2s, right 2s;
+    -o-transition: left 2s, right 2s;
+    -moz-transition: left 2s, right 2s;
+    transition: left 2s, right 2s;
+    left: 100%;
+    right: 100%;
+    z-index: 1;
+}
+
+.slide.slideSquash:target{
+    left: 0;
+    right: 0;
+}
+
+
 #slide1 {
-    background: LightSalmon; 
+    background: LightSalmon;
 }
 #slide2 {
     background: LightCoral;
@@ -25,16 +102,14 @@ html, body {
 #slide3 {
     background: DeepSkyBlue;
 }
+#slide4 {
+    background: limegreen;
+}
 #slideEnd {
     background: black;
 }
+
 #slideEnd span {
     color: white;
     text-decoration: none;
-
-    position: absolute;
-    top: 50%;
-    height: 10em;
-    margin-top: -5em;
-    margin-left: -3em;
 }
